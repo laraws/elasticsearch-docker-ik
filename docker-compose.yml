@@ -15,7 +15,6 @@ services:
     networks:
       - elk
 
-  #Nginx Service
   kibana:
     image: kibana:4.6.0
     container_name: kibana2
