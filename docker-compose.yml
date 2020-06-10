@@ -1,4 +1,4 @@
-version: '3'
+version: '3.2'
 services:
 
   elasticsearch:
@@ -6,9 +6,14 @@ services:
     container_name: elasticsearch7
     restart: unless-stopped
     tty: true
+    environment:
+      ES_JAVA_OPTS: "-Xmx256m -Xms256m"
+      discovery.type: single-node
     ports:
       - "9200:9200"
       - "9300:9300"
+    networks:
+      - elk
 
   #Nginx Service
   kibana:
@@ -18,3 +23,9 @@ services:
     tty: true
     ports:
       - "5601:5601"
+    networks:
+      - elk
+
+networks:
+  elk:
+    driver: bridge
