@@ -12,14 +12,14 @@ RUN set -eux \
     && cd ${PLUGINS_PATH} \
     && mkdir ${ES_IK_FOLDER_NAME} \
     && cd ${ES_IK_FOLDER_NAME} \
-    && wget ${ES_IK_PACKAGE} -O ${ES_IK_FOLDER_NAME}.zip \
+    && curl -L -o ${ES_IK_FOLDER_NAME}.zip ${ES_IK_PACKAGE} \
     && unzip ${ES_IK_FOLDER_NAME}.zip;
 
 RUN set -eux \
     && cd ${PLUGINS_PATH} \
     && mkdir ${ES_PINYIN_FOLDER_NAME} \
     && cd ${ES_PINYIN_FOLDER_NAME} \
-    && wget ${ES_PINYIN_PACKAGE} -O ${ES_PINYIN_FOLDER_NAME}.zip \
+    && curl -L -o ${ES_PINYIN_FOLDER_NAME}.zip ${ES_PINYIN_PACKAGE} \
     && unzip ${ES_PINYIN_FOLDER_NAME}.zip;
 
 CMD ["elasticsearch"]
