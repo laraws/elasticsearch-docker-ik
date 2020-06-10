@@ -17,7 +17,7 @@ services:
 
   #Nginx Service
   kibana:
-    image: kibana:2.4.3
+    image: kibana:4.6.0
     container_name: kibana2
     restart: unless-stopped
     tty: true
