@@ -1,0 +1,20 @@
+version: '3'
+services:
+
+  elasticsearch:
+    image: laraws/elasticsearch-ik:7.7.0
+    container_name: elasticsearch7
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+
+  #Nginx Service
+  kibana:
+    image: kibana:7.7.0
+    container_name: kibana7
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "5601:5601"
