@@ -1,10 +1,10 @@
-ARG ES_VERSION=2.4.3
+ARG ES_VERSION=7.7.0
 FROM elasticsearch:${ES_VERSION}
 
-ARG ES_IK_PACKAGE=https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v1.10.3/elasticsearch-analysis-ik-1.10.3.zip
+ARG ES_IK_PACKAGE=https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.7.0/elasticsearch-analysis-ik-7.7.0.zip
 ARG ES_IK_FOLDER_NAME=ik
 ARG PLUGINS_PATH=/usr/share/elasticsearch/plugins
-ARG ES_PINYIN_PACKAGE=https://github.com/medcl/elasticsearch-analysis-pinyin/releases/download/v1.8.3/elasticsearch-analysis-pinyin-1.8.3.zip
+ARG ES_PINYIN_PACKAGE=https://github.com/medcl/elasticsearch-analysis-pinyin/releases/download/v7.7.0/elasticsearch-analysis-pinyin-7.7.0.zip
 ARG ES_PINYIN_FOLDER_NAME=pinyin
 
 RUN echo ${PLUGINS_PATH}
